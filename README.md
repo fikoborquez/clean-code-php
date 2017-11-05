@@ -55,6 +55,8 @@ No todos los principios deben ser seguidos estrictamente, e incluso unos pocos s
 
 Inspirado por [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
 
+A pesar de que muchos desarrolladores aún utilizan PHP 5, la mayoría de los ejemplos en este artículo funcionan sólo en PHP 7.1+.
+
 ## Variables
 
 ### Usar variables que tengan significado y sean pronunciables
@@ -144,7 +146,7 @@ if ($user->access & User::ACCESS_UPDATE) {
 
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
-$cityZipCodeRegex = '/^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/';
+$cityZipCodeRegex = '/^[^,]+,\s*(.+?)\s*(\d{5})$/';
 preg_match($cityZipCodeRegex, $address, $matches);
 
 saveCityZipCode($matches[1], $matches[2]);
@@ -156,7 +158,7 @@ Está mejor, pero todavía es muy dependiente de la expresión regular.
 
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
-$cityZipCodeRegex = '/^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/';
+$cityZipCodeRegex = '/^[^,]+,\s*(.+?)\s*(\d{5})$/';
 preg_match($cityZipCodeRegex, $address, $matches);
 
 [, $city, $zipCode] = $matches;
@@ -169,7 +171,7 @@ Disminuye la dependencia a la expresión regular al nombrar subpatrones.
 
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
-$cityZipCodeRegex = '/^[^,\\]+[,\\\s]+(?<city>.+?)\s*(?<zipCode>\d{5})?$/';
+$cityZipCodeRegex = '/^[^,]+,\s*(?<city>.+?)\s*(?<zipCode>\d{5})$/';
 preg_match($cityZipCodeRegex, $address, $matches);
 
 saveCityZipCode($matches['city'], $matches['zipCode']);
@@ -220,7 +222,7 @@ function isShopOpen(string $day): bool
         'friday', 'saturday', 'sunday'
     ];
 
-    return in_array(strtolower($day), $openingDays);
+    return in_array(strtolower($day), $openingDays, true);
 }
 ```
 
@@ -254,12 +256,8 @@ function fibonacci(int $n)
 ```php
 function fibonacci(int $n): int
 {
-    if ($n === 0) {
-        return 0;
-    }
-
-    if ($n === 1) {
-        return 1;
+    if ($n === 0 || $n === 1) {
+        return $n;
     }
 
     if ($n > 50) {
@@ -1083,7 +1081,7 @@ class BankAccount
       $this->balance = $balance;
     }
 
-    public function withdrawBalance(int $amount): void
+    public function withdraw(int $amount): void
     {
         if ($amount > $this->balance) {
             throw new \Exception('Amount greater than available balance.');
@@ -1092,7 +1090,7 @@ class BankAccount
         $this->balance -= $amount;
     }
 
-    public function depositBalance(int $amount): void
+    public function deposit(int $amount): void
     {
         $this->balance += $amount;
     }
@@ -1106,7 +1104,7 @@ class BankAccount
 $bankAccount = new BankAccount();
 
 // Comprar zapatos...
-$bankAccount->withdrawBalance($shoesPrice);
+$bankAccount->withdraw($shoesPrice);
 
 // Obtener saldo
 $balance = $bankAccount->getBalance();
@@ -1591,7 +1589,10 @@ class Square extends Rectangle
     }
 }
 
-function renderLargeRectangles(Rectangle $rectangles): void
+/**
+ * @param Rectangle[] $rectangles
+ */
+function renderLargeRectangles(array $rectangles): void
 {
     foreach ($rectangles as $rectangle) {
         $rectangle->setWidth(4);
@@ -1654,7 +1655,10 @@ class Square extends Shape
     }
 }
 
-function renderLargeRectangles(Shape $rectangles): void
+/**
+ * @param Rectangle[] $rectangles
+ */
+function renderLargeRectangles(array $rectangles): void
 {
     foreach ($rectangles as $rectangle) {
         if ($rectangle instanceof Square) {
@@ -1940,9 +1944,7 @@ function showList(array $employees): void
 Disponible en muchos otros idiomas:
 
 *  :cn: **Chino:**
-   * [yangweijie/clean-code-php](https://github.com/yangweijie/clean-code-php)
    * [php-cpm/clean-code-php](https://github.com/php-cpm/clean-code-php)
-   * [gbcr/clean-code-php](https://github.com/gbcr/clean-code-php)
 * :ru: **Ruso:**
    * [peter-gribanov/clean-code-php](https://github.com/peter-gribanov/clean-code-php)
 * :brazil: **Portugues:**
