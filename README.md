@@ -73,7 +73,7 @@ $ymdstr = $moment->format('y-m-d');
 $currentDate = $moment->format('y-m-d');
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Usar el mismo vocabulario para el mismo tipo de variable
 
@@ -92,7 +92,7 @@ getUserProfile();
 getUser();
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Usar nombres que puedan ser buscados (parte 1)
 
@@ -138,7 +138,7 @@ if ($user->access & User::ACCESS_UPDATE) {
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Usar variables explicativas
 
@@ -177,7 +177,7 @@ preg_match($cityZipCodeRegex, $address, $matches);
 saveCityZipCode($matches['city'], $matches['zipCode']);
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Evitar anidación profunda usando return tempranamente (parte 1)
 
@@ -226,7 +226,7 @@ function isShopOpen(string $day): bool
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Evitar anidación profunda usando return tempranamente (parte 2)
 
@@ -268,7 +268,7 @@ function fibonacci(int $n): int
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Evitar mapas mentales
 
@@ -307,7 +307,7 @@ foreach ($locations as $location) {
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### No agregar contexto innecesario
 
@@ -340,7 +340,7 @@ class Car
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Usar argumentos por defecto en lugar de cortocircuitos o condicionales
 
@@ -378,7 +378,7 @@ function createMicrobrewery(string $breweryName = 'Hipster Brew Co.'): void
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ## Funciones
 
@@ -420,7 +420,7 @@ function createMenu(MenuConfig $config): void
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Las funciones deben hacer una cosa
 
@@ -461,7 +461,7 @@ function isClientActive(int $client): bool
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Los nombres de las funciones deben indicar lo que hacen
 
@@ -501,7 +501,7 @@ $message = new Email(...);
 $message->send();
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Las funciones deben tener sólo un nivel de abstracción
 
@@ -637,7 +637,7 @@ class BetterJSAlternative
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### No usar banderas como parámetros de funciones
 
@@ -670,7 +670,7 @@ function createTempFile(string $name): void
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Evitar efectos secundarios
 
@@ -714,7 +714,7 @@ var_dump($name); // 'Ryan McDermott';
 var_dump($newName); // ['Ryan', 'McDermott'];
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### No escribir funciones globales
 
@@ -760,7 +760,7 @@ $configuration = new Configuration([
 
 Y ahora puedes usar una instancia de la clase `Configuration` en tu aplicación.
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### No usar el patrón Singleton
 
@@ -820,7 +820,7 @@ $connection = new DBConnection($dsn);
 
 Y ahora debes usar la instancia de `DBConnection` en tu aplicación.
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Encapsular condicionales
 
@@ -840,7 +840,7 @@ if ($article->isPublished()) {
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Evitar condicionales negativos
 
@@ -871,7 +871,7 @@ if (isDOMNodePresent($node)) {
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Evitar condicionales
 
@@ -941,7 +941,7 @@ class Cessna implements Airplane
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Evitar revisión de tipo (parte 1)
 
@@ -971,7 +971,7 @@ function travelToTexas(Traveler $vehicle): void
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Evitar revisión de tipo (parte 2)
 
@@ -1001,7 +1001,7 @@ function combine(int $val1, int $val2): int
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Quitar código muerto
 
@@ -1036,7 +1036,7 @@ $request = requestModule($requestUrl);
 inventoryTracker('apples', $request, 'www.inventory-awesome.io');
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 
 ## Objetos y estructuras de datos
@@ -1110,7 +1110,7 @@ $bankAccount->withdraw($shoesPrice);
 $balance = $bankAccount->getBalance();
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Hacer que los objetos tengan partes private/protected
 
@@ -1161,7 +1161,7 @@ $employee = new Employee('John Doe');
 echo 'Employee name: '.$employee->getName(); // Nombre del empleado: John Doe
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ## Clases
 
@@ -1250,7 +1250,7 @@ class Employee
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Evitar interfaces fluidas
 
@@ -1348,7 +1348,7 @@ $car->setModel('F-150');
 $car->dump();
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ## SOLID
 
@@ -1428,7 +1428,7 @@ class UserSettings
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Principio de abierto/cerrado
 
@@ -1539,7 +1539,7 @@ class HttpRequester
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Principio de la sustitución de Liskov
 
@@ -1677,7 +1677,7 @@ $shapes = [new Rectangle(), new Rectangle(), new Square()];
 renderLargeRectangles($shapes);
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Principio de segregación de la interfaz
 
@@ -1764,7 +1764,7 @@ class Robot implements Workable
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ### Principio de la inversión de dependencia
 
@@ -1850,7 +1850,7 @@ class Manager
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ## No te repitas
 
@@ -1937,7 +1937,7 @@ function showList(array $employees): void
 }
 ```
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
 
 ## Traducciones
 
@@ -1953,4 +1953,4 @@ Disponible en muchos otros idiomas:
 * :thailand: **Tailandes:**
    * [panuwizzle/clean-code-php](https://github.com/panuwizzle/clean-code-php)
 
-**[⬆Volver](#tabla-de-contenidos)**
+**[⬆ volver](#tabla-de-contenidos)**
